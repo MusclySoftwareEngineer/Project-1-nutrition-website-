@@ -73,7 +73,7 @@
     max-width: 700px;
     text-align: left;
     width: 100%;
-    padding-left: clamp(16px, calc(-22.18px + 10.18vw), 100px);
+    padding-left: clamp(0px, calc(-22.18px + 10.18vw), 100px);
     padding-bottom: clamp(60px, calc(-3.64px + 16.97vw), 200px);
     font-size: clamp(16px, calc(15.09px + 0.24vw), 18px);
 }
@@ -207,8 +207,9 @@
     max-width: 100%;
     height: auto;
 }
-.header-btn {
 
+.p1 {
+  padding-left: 0px;
 }
 
 }

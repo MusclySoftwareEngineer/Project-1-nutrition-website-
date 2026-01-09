@@ -14,13 +14,20 @@ content.innerHTML = `
      up as night blindness and dry eyes, especially if fat absorption is poor. Too much retinol (mainly from supplements or frequent liver) can be toxic, and high doses are especially dangerous during pregnancy.
 </p>
 
-<h2 class="vitamin-a-h22">Daily intake</h2>
+<div class="vitamin-a-outlinedbox1">
+ <h2 class="vitamin-a-h23">Recommended daily intake</h2>
+ <img src="./pic/vitamin-A-intake.png" alt="A daily intake"
+ class="vitamin-a-pic2">
+</div>
 
-<img src="./pic/vitamin-A-intake.png" alt="A daily intake"
-class="vitamin-a-pic2">
+<div class="vitamin-a-outlinedbox2">
+ <h3 class="vitamin-a-h31">Tolerable upper intake levels for preformed vitamin A</h3>
+ <img src="./pic/upperintake.png" alt="A upper intake"
+ class="vitamin-a-pic3">
+</div>
 <a class="vitamin-a-source1" href="https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/" target="_blank" rel="noopener noreferrer">Source</a>
 
-<h2 class="vitamin-a-h23">Side Effects</h2>
+<h2 class="vitamin-a-h24">Side Effects</h2>
 <p class="vitamin-a-p2">Vitamin A doesn’t cause side effects when consumed in appropriate amounts, but because
  it’s fat-soluble, excessive intake can cause side effects.
 </p>

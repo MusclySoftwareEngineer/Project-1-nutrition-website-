@@ -95,6 +95,7 @@ img, video, iframe {
     margin-left: clamp(0px, calc(-22.18px + 10.18vw), 100px);
     margin-bottom: clamp(60px, calc(-3.64px + 16.97vw), 200px);
     font-size: clamp(16px, calc(15.09px + 0.24vw), 18px);
+    font-family: sans-serif;
 }
 
 .arrow {

@@ -5,7 +5,7 @@ if (!document.querySelector(".header-btn")) {
 <header class="site-header">
     <img src="./pic/left_one.jpeg" alt="Sport Nutrition" class="header-limage">
     <h1>Sport Nutrition</h1>
-    <img src="./pic/right_one.jpeg" alt="Sport Nutrition" class="header-rimage">
+    <img src="./pic/nutritionpic.jpg" alt="Sport Nutrition" class="header-rimage">
 </header>
 
 <!-- header buttons -->

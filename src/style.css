@@ -24,7 +24,9 @@ img, video, iframe {
     font-family: Arial, sans-serif;
 }
 
-
+.site-header h1{ 
+  margin: 0;
+}
 
 
 
@@ -379,10 +381,6 @@ img, video, iframe {
     z-index: 1000;
 }
 
-.site-header h1{ 
-  margin: 0;
-}
-  
 
 
 }

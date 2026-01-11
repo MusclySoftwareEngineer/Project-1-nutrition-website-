@@ -26,6 +26,8 @@ img, video, iframe {
 
 
 
+
+
 .header-btn {
     background-color: #007bff;
     color: white;
@@ -310,7 +312,7 @@ img, video, iframe {
 
 
 
-@media  (max-width:600px) {
+@media  (max-width:800px) {
   body {
     overflow-x: hidden;
   }
@@ -376,4 +378,11 @@ img, video, iframe {
     top: 0;
     z-index: 1000;
 }
+
+.site-header h1{ 
+  margin: 0;
+}
+  
+
+
 }

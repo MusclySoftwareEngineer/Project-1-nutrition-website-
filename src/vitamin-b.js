@@ -1,5 +1,3 @@
-alert("JS loaded");
-
 const target = document.querySelector("#vtm-b");
 
 const content = document.createElement("div");

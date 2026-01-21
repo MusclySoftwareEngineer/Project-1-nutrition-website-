@@ -1,5 +1,6 @@
 console.log("main.js");
 
+
 if (!document.querySelector(".header-btn")) {
   document.body.insertAdjacentHTML("afterbegin", `
 <header class="site-header">

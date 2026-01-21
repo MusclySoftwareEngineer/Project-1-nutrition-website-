@@ -309,9 +309,23 @@ img, video, iframe {
   display: flex;
 }
 
+.vitamin-b-h22 {
+  font-size: clamp(22px, calc(18.36px + 0.97vw), 30px);
+  font-weight: 100;
+  margin-left: clamp(16px, calc(-67.64px + 22.30vw), 200px);
+  margin-top: clamp(32px, calc(-21.64px + 14.30vw), 200px);
+  display: flex;
+  font-family: sans-serif;
+  font-weight: 400;
+}
+
+.blogo {
+  display: block;
+  margin: 60px auto 0;
+}
 
 
-@media  (max-width:800px) {
+@media  (max-width:800px) {a
   body {
     overflow-x: hidden;
   }

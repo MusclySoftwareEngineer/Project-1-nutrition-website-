@@ -371,6 +371,10 @@ img, video, iframe {
   margin-left: clamp(0px, calc( -19.55px + 5.21vw), 50px);
   margin-right: 2px;
   position: relative;
+  background: linear-gradient(to bottom,
+    #2f6fff 0%,
+    #4fa2ff 45%,
+    #9fe6ff 100% );
 }
 
 .game-display canvas {
@@ -391,8 +395,8 @@ img, video, iframe {
 
 .cloud {
   position: absolute;
-  top: 50px;
-  left: 20px;
+  top: 0;
+  left: 0;
   width: clamp(70px, calc(11px + 15.76vw), 200px);
   height: clamp(60px, calc(21.82px + 7.64vw), 120px);
   pointer-events: none;

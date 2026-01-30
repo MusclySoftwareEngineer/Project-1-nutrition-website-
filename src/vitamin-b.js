@@ -103,6 +103,8 @@ if (target) {
   document.body.appendChild(content);
 }
 
+
+// Blogo animation
 const canvas = content.querySelector('.blogo');
 const bctx = canvas.getContext('2d');
 

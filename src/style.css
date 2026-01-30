@@ -364,6 +364,41 @@ img, video, iframe {
   font-size: clamp(16px, calc(15.09px + 0.24vw), 18px);
 }
 
+.game-display {
+  max-width: 1400px;
+  height: clamp(300px, calc( 95.45px + 54.55vw), 600px);
+  overflow: hidden;
+  margin-left: clamp(0px, calc( -19.55px + 5.21vw), 50px);
+  margin-right: 2px;
+  position: relative;
+}
+
+.game-display canvas {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+
+}
+
+#sun {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: clamp(50px, calc(18.18px + 6.36vw), 100px);
+  height: clamp(50px, calc(18.18px + 6.36vw), 100px);
+  z-index: 10;
+}
+
+.cloud {
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  width: clamp(70px, calc(11px + 15.76vw), 200px);
+  height: clamp(60px, calc(21.82px + 7.64vw), 120px);
+  pointer-events: none;
+  user-select: none;
+}
+
 
 
 @media  (max-width:800px) {a
@@ -437,6 +472,5 @@ img, video, iframe {
   margin: 0;
   line-height: 1.1;
 }
-
 
 }

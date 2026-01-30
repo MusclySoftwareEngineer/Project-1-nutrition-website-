@@ -56,8 +56,9 @@ function createCloud(startX) {
   img.src = CLOUD_SRC;
   img.alt = "cloud";
   img.className = "cloud";
-
-  const y = rand(10, 100);   // random vertical position (your old top:50px becomes "range")
+  
+  const cloudHeight = gameDisplay.clientHeight;
+  const y = rand (7, cloudHeight * 0.1);  // random vertical position
 
   const scale = rand(0.7, 0.7); // random scale makes them look more natural
 

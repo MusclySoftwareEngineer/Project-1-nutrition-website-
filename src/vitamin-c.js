@@ -44,85 +44,78 @@ g.fillRect(0, groundTop, groundCanvas.width, grassHeight);
 const gameDisplay = document.querySelector(".game-display");
 const CLOUD_SRC = "./pic/cloud.png";
 
-
 const clouds = [];    // Store cloud count
 
 function rand(min, max) {
   return Math.random() * (max - min) + min;   // Helper random function
 }
 
-function createCloud(startX) {
+function createCloud() {
   const img = document.createElement("img");    // Create 1 cloud element + its movement data
   img.src = CLOUD_SRC;
   img.alt = "cloud";
   img.className = "cloud";
   
   const cloudHeight = gameDisplay.clientHeight;
-  const y = rand (7, cloudHeight * 0.1);  // random vertical position
-
-  const scale = rand(0.7, 0.7); // random scale makes them look more natural
+  const cloudWidth = gameDisplay.clientWidth;
+  
+  const x = cloudWidth + rand(0, cloudWidth * 0.8); // start just beyond right edge
+  const y = rand(7, cloudHeight * 0.13); // random vertical position
+  const scale = rand(0.5, 0.7); // random scale makes them look more natural
+const cloud_travelSpeed = 3; // by seconds to cross the screen
+  function cloudspeedperSecond() {
+    const w = gameDisplay.clientWidth;
+    return w / cloud_travelSpeed;
+  }
+  const speed = cloudspeedperSecond();
+  
+ 
 
   img.style.top = `${y}px`;
-  img.style.left = `${startX}px`;
+  img.style.left = `${x}px`;
   img.style.transform = `scale(${scale})`;
 
   gameDisplay.appendChild(img);
 
-  const speed = rand(120, 200);    // speed in px/sec (random per cloud)
-
   clouds.push({
     el: img,
-    x: startX,
+    x,
     y,
     speed,
     scale
   });
 }
 
-function spawnInitialClouds() {    // Spawn clouds with irregular spacing
-  const W = gameDisplay.clientWidth;
 
-  let x = rand(0, W);   // Put them across and beyond the screen with random gaps
-  for (let i = 0; i < 7; i++) {
-    createCloud(x);
-
-    x += rand(300, 450); // irregular gap between clouds
-  }
-}
-
-spawnInitialClouds();
+  for (let i = 0; i < 3; i++) createCloud();
 
 let last = performance.now();  // Animation loop (move left forever)
+
+let spawnTimer = 0;
+const spawnEvery = 1.7; // seconds
 
 function animate(now) {
   const dt = (now - last) / 1000; // seconds
   last = now;
+   spawnTimer += dt;
+   while (spawnTimer > spawnEvery) {
+     createCloud();
+     spawnTimer -= spawnEvery;
+   }
 
-  const W = gameDisplay.clientWidth;
+ // Move & remove clouds
+  for (let i = clouds.length - 1; i >= 0; i--) {
+    const c = clouds[i];
 
-  for (const c of clouds) {
     c.x -= c.speed * dt;
     c.el.style.left = `${c.x}px`;
 
-    /* When cloud has moved out left side, respawn on right side
-     Use getBoundingClientRect to get actual on-screen width (after clamp & scale) */
     const cloudWidth = c.el.getBoundingClientRect().width;
 
+    // If cloud exits left, delete it (no recycling)
     if (c.x < -cloudWidth - 10) {
-      
-      // Respawning cloud
-      c.x = W + rand(100, 200);
-
-      const re_size = gameDisplay.clientHeight;
-      const minY = Math.max(7, re_size * 0.01);
-      const maxY = Math.min(30, re_size * 0.2);
-      c.y = rand(minY, maxY);
-      c.scale = rand(0.3, 0.7);   // spawning cloud size
-      c.speed = rand(50, 60);
-
-      c.el.style.top = `${c.y}px`;
-      c.el.style.transform = `scale(${c.scale})`;
-      c.el.style.left = `${c.x}px`;
+      c.el.remove();
+      clouds.splice(i, 1);
     }
   }
 

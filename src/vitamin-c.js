@@ -4,7 +4,7 @@ const content = document.createElement("div");
 content.classList.add("vitamin-c-page");
 content.innerHTML = `
 
-<h2 class="vitamin-c-h21">Vitamin C</h2>
+<h2 class="vitamin-c-h21">Vitamin C  <img id="orange-pic" src="./pic/orange.png" alt="orange"></h2>
 
 <div class="game-display" style="border: 2px solid black;">
   <img id="sun" src="./pic/Sun.png" alt="sun">  

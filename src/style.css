@@ -367,9 +367,9 @@ img, video, iframe {
 .game-display {
   max-width: 1400px;
   height: clamp(300px, calc( 95.45px + 54.55vw), 600px);
-  overflow: hidden;
   margin-left: clamp(0px, calc( -19.55px + 5.21vw), 50px);
   margin-right: 2px;
+  overflow-x: hidden;
   position: relative;
   background: linear-gradient(to bottom,
     #2f6fff 0%,
@@ -403,7 +403,30 @@ img, video, iframe {
   user-select: none;
 }
 
+.vitamin-c-h21 {
+  font-size: clamp(24px, calc(19px + 1.33vw), 35px);
+  font-weight: 100;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: clamp(16px, calc(-67.64px + 22.30vw), 200px);
+  margin-top: clamp(32px, calc(-21.64px + 14.30vw), 150px);
+  padding-bottom: 100px;
+  display: inline-flex;
+background: linear-gradient(to right,
+  #ff7b00 0%,
+  #ffb44a 55%,
+  #caa308 100%
+);
 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+#orange-pic {
+  width: 12.14vw;
+  height: auto;
+}
 
 @media  (max-width:800px) {
   body {

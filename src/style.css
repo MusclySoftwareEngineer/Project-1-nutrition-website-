@@ -208,7 +208,7 @@ img, video, iframe {
 
 .vitamin-a-p1 {
   padding-bottom: clamp(2.5rem, calc(1.36rem + 4.85vw), 5rem);
-  max-width: 1000px;
+  max-width: 1100px;
   margin-left: clamp(0px, calc(-90.91px + 24.24vw), 200px);
   font-family: sans-serif;
   font-weight: 100;
@@ -216,7 +216,7 @@ img, video, iframe {
 
   
 }
-
+  
 .vitamin-a-p2 {
   margin-bottom: clamp(20px, calc(6.36px + 3.64vw), 50px);
   max-width: 1000px;
@@ -369,7 +369,7 @@ img, video, iframe {
   height: clamp(300px, calc( 95.45px + 54.55vw), 600px);
   margin-left: clamp(0px, calc( -19.55px + 5.21vw), 50px);
   margin-right: 2px;
-  overflow-x: hidden;
+  overflow: hidden;
   position: relative;
   background: linear-gradient(to bottom,
     #2f6fff 0%,
@@ -399,6 +399,14 @@ img, video, iframe {
   left: 0;
   width: clamp(70px, calc(11px + 15.76vw), 200px);
   height: clamp(60px, calc(21.82px + 7.64vw), 120px);
+  pointer-events: none;
+  user-select: none;
+}
+
+.fruit {
+  position: absolute;
+  width: clamp(40px, calc(10.73px + 7.8vw), 80px);
+  height: auto;
   pointer-events: none;
   user-select: none;
 }
@@ -498,6 +506,10 @@ background: linear-gradient(to right,
 .site-header h1{ 
   margin: 0;
   line-height: 1.1;
+}
+
+.vitamin-a-ul2 {
+  margin-left: 9px;
 }
 
 }

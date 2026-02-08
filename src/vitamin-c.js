@@ -47,7 +47,7 @@ const CLOUD_SRC = "./pic/cloud.png";
 const clouds = [];    // Store cloud count
 
 function rand(min, max) {
-  return Math.random() * (max - min) + min;   // Helper random function
+  return Math.random() * (max - min) + min;  
 }
 
 function createCloud() {
@@ -123,3 +123,66 @@ function animate(now) {
 }
 
 requestAnimationFrame(animate);
+
+// fruit line setup
+const fruitLine = document.querySelector(".game-display"); 
+
+const fruitsSRC = [
+  "./pic/kiwi.png",
+  "./pic/strawberry.png",
+  "./pic/talkingorange.png"
+];
+
+const fruitY = 0.75 * gameDisplay.clientHeight;
+const fruitGap = 100;
+const fruitSpeed = 100;
+
+// create 3 fruits
+const fruits = [];
+for (let i = 0; i < fruitsSRC.length; i++) {
+  const img = document.createElement("img");
+  img.src = fruitsSRC[i];
+  img.alt = "fruit";
+  img.className = "fruit";
+  img.style.top = `${fruitY}px`;   // CSS should handle position:absolute
+  fruitLine.appendChild(img);
+
+  fruits.push({
+    el: img,
+    x: fruitLine.clientWidth + 20 + i * fruitGap,
+  });
+}
+
+const strawberryHeight = 0.027 * gameDisplay.clientHeight; // Adjust strawberry height based on game display size
+const strawberry = fruits.at(1);
+if (strawberry) {
+  strawberry.el.style.top = `${fruitY - strawberryHeight}px`;
+}
+
+let fruitLast = performance.now();
+
+function animateFruits(now) {
+  const dt = (now - fruitLast) / 1000;
+  fruitLast = now;
+
+  // move left
+  for (const f of fruits) {
+    f.x -= fruitSpeed * dt;
+    f.el.style.left = `${f.x}px`;
+  }
+
+  // recycle to right when off-screen
+  for (const f of fruits) {
+    const w = f.el.getBoundingClientRect().width || 80; // fallback
+    if (f.x < -w) {
+      let maxX = fruits[0].x;
+      for (const other of fruits) if (other.x > maxX) maxX = other.x;
+      f.x = maxX + fruitGap;
+      f.el.style.left = `${f.x}px`;
+    }
+  }
+
+  requestAnimationFrame(animateFruits);
+}
+
+requestAnimationFrame(animateFruits);

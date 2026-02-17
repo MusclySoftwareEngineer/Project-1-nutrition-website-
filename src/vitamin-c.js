@@ -10,9 +10,16 @@ content.innerHTML = `
   <img id="sun" src="./pic/Sun.png" alt="sun">  
 
   <canvas id="ground"></canvas>
-  <canvas id="protagonist"></canvas>
-  <canvas id="coin"></canvas>
 </div>
+
+<h2 class="vitamin-c-h22">Essential Information</h2>
+<p class="vitamin-c-p1">Vitamin C is required for collagen synthesis, which supports skin, tendons, ligaments, cartilage, blood vessels, and bone structure.
+It acts as a powerful antioxidant, neutralizing reactive oxygen species and protecting cells from oxidative damage.
+Vitamin C is necessary for normal immune function, supporting barrier integrity and helping white blood cells function effectively.
+It enhances non-heme iron absorption in the intestine by reducing ferric iron (Fe³⁺) to the more absorbable ferrous form (Fe²⁺).
+Vitamin C participates in neurotransmitter synthesis, including dopamine and norepinephrine production.
+It is involved in carnitine synthesis, which is important for fatty acid transport into mitochondria for energy production.
+</p>
 
 `;
 
